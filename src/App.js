@@ -2,7 +2,6 @@ import React from 'react';
 import { observer } from 'mobx-react';
 import Userstore from './Stores/Userstore.js';
 import LoginForm from './Components/LoginForm.js';
-import InputField from './Components/InputField.js';
 import SubmitBtn from './Components/SubmitBtn.js';
 import './App.css';
 
@@ -16,7 +15,7 @@ class App extends React.Component {
             method: 'post',
             headers: {
               'Accept': 'application/json',
-              'Content-type': 'application/json'
+              'Content-Type': 'application/json'
             }
         });
 
@@ -46,7 +45,7 @@ class App extends React.Component {
             method: 'post',
             headers: {
               'Accept': 'application/json',
-              'Content-type': 'application/json'
+              'Content-Type': 'application/json'
             }
         });
 
@@ -61,8 +60,13 @@ class App extends React.Component {
     catch(e) {
       console.log(e);
     }
-  }
-    
+  }  
+
+  componentDidMount() {
+    const body = document.getElementsByTagName('body')[0];
+    body.classList.add('bg-primary');
+    }   
+        
   render() {
 
       if (Userstore.loading) {
@@ -95,8 +99,8 @@ class App extends React.Component {
 
       return (
         <div className="app">
-          <div className="container">
-            <LoginForm />   
+          <div className="container">          
+            <LoginForm />  
           </div>  
         </div>
       );  

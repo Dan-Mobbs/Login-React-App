@@ -1,0 +1,5 @@
+To Do List
+
+add react icons
+add images to project
+add a json server

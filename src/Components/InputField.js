@@ -5,7 +5,13 @@ class InputField extends React.Component {
     render() {
         return (
           <div className="InputField">
-            test1   
+            <input
+              className='form-control form-control-user'
+              type={this.props.type}
+              placeholder={this.props.placeholder}
+              value={this.props.value}
+              onChange={ (e) => this.props.onChange(e.target.value) }       
+            />   
           </div>
         )  
       };
@@ -14,3 +20,4 @@ class InputField extends React.Component {
   
   export default InputField;
   
+

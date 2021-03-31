@@ -5,7 +5,13 @@ class SubmitBtn extends React.Component {
     render() {
         return (
           <div className="SubmitBtn">
-            test1   
+            <button
+            text="Login"
+             className={ "btn btn-primary btn-user btn-block" }
+             disabled={ this.props.disabled }
+             onClick={ () => this.props.onClick() }>
+             {this.props.text}               
+            </button> 
           </div>
         )  
       };
